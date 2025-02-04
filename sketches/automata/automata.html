@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../template/styles.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Elementary Cellular Automata</h1>
+        </header>
+        <div id="container">
+            <span class="text"><a href="https://mathworld.wolfram.com/ElementaryCellularAutomaton.html" target="blank">https://mathworld.wolfram.com/ElementaryCellularAutomaton.html</a></span>
+            <canvas id="canvas"></canvas>
+            <div style="display: flex;">
+                <span class="text">Rule: </span>
+                <input type="number" min="0" max="255" value="30" id="rule">
+            </div>
+        </div>
+        <script src="../../template/utils.js"></script>
+        <script src="automata.js"></script>
+    </body>
+</html>

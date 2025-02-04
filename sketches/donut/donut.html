@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../template/styles.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Donut</h1>
+        </header>
+        <div id="container">
+            <div class="text container">
+                Although this spinning donut is pretty impressive, it is quite easy to obtain using basic linear algebra.<br><br>
+                <span>The first step is to sample points from the surface of a 3d donut. We can do this by rotating a circle sitting on the plane \((x, y)\) centered at \((c, 0, 0)\) around the \(y\) axis.</span><br>
+                <span>Sampling the circle points can be done using polar coordinates:</span><br>
+                <span class="center">
+                    \(
+                      \left\{
+                        \begin{array}{ll}
+                            x = r cos(\theta) + c, \quad \theta \in [0, 2 \pi] \\
+                            y = r sin(\theta) \\
+                            z = 0
+                        \end{array}
+                      \right.
+                    \)
+                </span><br>
+                <span>Once we have the circle, we can rotate it around the \(y\) axis using a 3d rotation matrix:</span><br>
+                <span class="center">
+                    \(
+                        R_y(\theta) =
+                        \begin{bmatrix}
+                            cos(\theta) & 0 & sin(\theta) \\
+                            0 & 1 & 0 \\
+                            -sin(\theta) & 0 & cos(\theta)
+                        \end{bmatrix}
+                    \)
+                </span><br>
+                <span>This will get you points on the donut surface. You can now multiply these points by a rotation matrix that rotates around all three axes.</span>
+            </div>
+            <canvas id="canvas"></canvas>
+        </div>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../../lib/matrix.js"></script>
+        <script src="../../template/utils.js"></script>
+        <script src="donut.js"></script>
+    </body>
+</html>
