@@ -1915,3 +1915,76 @@ a:hover {
     transform: rotateY(180deg);
 
   }
+
+
+.form {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+    background: white;
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #3a424b;
+}
+
+label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #666;
+    transition: all 0.3s ease-in-out;
+    background: white;
+    padding: 0 5px;
+}
+
+input:focus + label, 
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    color: #3a424b;
+}
+
+.border {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #3a424b;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+input:focus ~ .border, textarea:focus ~ .border {
+    transform: scaleX(1);
+}
+
+button {
+    background: #3a424b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #3a424b;
+}

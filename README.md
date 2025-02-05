@@ -14,3 +14,6 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Avoid CORS issues
+python -m http.server 8000

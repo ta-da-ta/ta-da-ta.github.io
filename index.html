@@ -32,40 +32,47 @@
       <a href="index.html" class="logo"><img src="images/logodo.svg" alt="logo"/></a>
       <h2 class="modal-title">Contact us !</h2>
       <p class="modal-subtitle">Winners always try 😉</p>
-      <form class='form' name='TadataForm' method='POST'><input type='hidden' name='form-name' value='TadataForm' />
+      <form class='form' type='hidden' name='form-name' method='POST' value='TadataForm' onsubmit="sendEmail(event)">
         <div class="group">
-          <input type="text" id="firstName" name="first-name" placeholder="&nbsp;" autocomplete="off" required>
-          <label for="first-name">First name</label>
-          <span class="border"></span>
+            <input type="text" id="firstName" name="first-name" placeholder="&nbsp;" autocomplete="off" required>
+            <label for="first-name">First name</label>
+            <span class="border"></span>
         </div>
         <div class="group">
-          <input type="email" name="email" placeholder="&nbsp;" autocomplete="off" required>
-          <label for="email">Email</label>
-          <span class="border"></span>
+            <input type="email" id="email" name="email" placeholder="&nbsp;" autocomplete="off" required>
+            <label for="email">Email</label>
+            <span class="border"></span>
         </div>
         <div class="group">
-          <input autocomplete="off" placeholder="&nbsp;" type="text" id="subject" name="subject" required><br><br>
-          <label for="subject">Subject</label>
-          <span class="border"></span>
+            <input autocomplete="off" placeholder="&nbsp;" type="text" id="subject" name="subject" required>
+            <label for="subject">Subject</label>
+            <span class="border"></span>
         </div>
         <div class="group">
-          <textarea autocomplete="off" placeholder="&nbsp;" id="message" name="message" rows="4" cols="30" required></textarea><br><br>
-          <label for="message">Message</label><br>
+          <input name="message" rows="5"  autocomplete="off" placeholder="&nbsp;" type="text" id="message" name="subject">
+          <label for="message">Message</label>
           <span class="border"></span>
-        </div>
-        <button onclick="sendEmail()" type="submit" class="button">Send</button>
-        <script>
-          function sendEmail(event) {
-              event.preventDefault(); 
-              let userEmail = document.getElementById("email").value;
-              let subject = document.getElementById("subject").value;
-              let message = document.getElementById("message").value;
-  
-              let mailtoLink = `mailto:recipient@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + userEmail + "\n\n" + message)}`;
-              window.location.href = mailtoLink;
-          }
-      </script>
-      </form>
+      </div>
+        <button type="submit">Send</button>
+    </form>
+    
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();  // Prevents form submission
+    
+            let userEmail = document.getElementById("email").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+    
+            if (!userEmail || !subject || !message) {
+                alert("Please fill in all fields.");
+                return;
+            }
+    
+            let mailtoLink = `mailto:dev.tadata@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + userEmail + "\n\n" + message)}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
     </div>
   </div>
 </div>
@@ -218,7 +225,5 @@
 
   });
 </script>
-
 </body>
-
 </html>
