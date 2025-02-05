@@ -1,58 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>Tadata</title>
-    <link rel="stylesheet" href="index.css">
-</head>
+    <meta name="title" content="Tadata">
+    <meta name="description" content="Tadata contact website.">
+    <meta name="keywords" content="tiny, mail, client, gmail, icloud, minimal">
+    <meta name="author" content="@tadata">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Tadata.com/">
+    <meta property="og:title" content="Tadata">
+    <meta property="og:description" content="Tadata contact website.">
+    <link href="images/thumbnail.jpg" rel="apple-touch-icon">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
 <body>
-    <div class="container">
-        <div class="project-card" onclick="window.location.href='sketches/gravity/gravity.html';">
-            <div class="project-title">Gravity</div>
-            <div class="project-description">Simulation of gravity applied to particles</div>
-        </div>
-
-        <div class="project-card" onclick="window.location.href='sketches/genetic/genetic.html';">
-            <div class="project-title">Genetic Algorithm</div>
-            <div class="project-description">Simulation of natural selection</div>
-        </div>
-
-        <div class="project-card" onclick="window.location.href='sketches/donut/donut.html';">
-            <div class="project-title">Donut</div>
-            <div class="project-description">An endlessly spinning donut</div>
-        </div>
-
-        <div class="project-card" onclick="window.location.href='sketches/perlin/perlin.html';">
-            <div class="project-title">Perlin Noise</div>
-            <div class="project-description">Visualization of a flow field generated with Perlin Noise</div>
-        </div>
-
-        <div class="project-card" onclick="window.location.href='sketches/circles/circles.html';">
-            <div class="project-title">Circles</div>
-            <div class="project-description">Growing circles animation</div>
-        </div>
-
-        <div class="project-card" onclick="window.location.href='sketches/ray_marching/ray_marching.html';">
-            <div class="project-title">Ray Marching</div>
-            <div class="project-description">Ray marching algorithm</div>
-        </div>
-
-        <div class="project-card" onclick="window.location.href='sketches/picture/picture.html';">
-            <div class="project-title">Particles Throw</div>
-            <div class="project-description">Throwing particles in unison</div>
-        </div>
-
-        <div class="project-card" onclick="window.location.href='sketches/sand/sand.html';">
-            <div class="project-title">Sand Simulation</div>
-            <div class="project-description">Sand simulation as cellular automata</div>
-        </div>
-
-        <div class="project-card" onclick="window.location.href='sketches/automata/automata.html';">
-            <div class="project-title">Elementary Cellular Automata</div>
-            <div class="project-description">Wolfram elementary cellular automata</div>
-        </div>
+  <div class="modal">
+  <button type="button" class="modal-close modal-toggle"><i class="icon" data-feather="x"></i><span class="hide-mobile">ESC</span></button>
+  <div class="modal-content">
+    <div class="success">
+      <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo"/></a>
+      <h2 class="modal-title first-name" id="title-name"></h2>
+      <p>We'll be in touch.</p>
+      <a href="index.html" class="button">Back home</a>
     </div>
-    <script src="index.js"></script>
+    <div class="form-content">
+      <a href="index.html" class="logo"><img src="images/logodo.svg" alt="logo"/></a>
+      <h2 class="modal-title">Contact us !</h2>
+      <p class="modal-subtitle">Winners always try 😉</p>
+      <form class='form' name='TadataForm' method='POST'><input type='hidden' name='form-name' value='TadataForm' />
+        <div class="group">
+          <input type="text" id="firstName" name="first-name" placeholder="&nbsp;" autocomplete="off" required>
+          <label for="first-name">First name</label>
+          <span class="border"></span>
+        </div>
+        <div class="group">
+          <input type="email" name="email" placeholder="&nbsp;" autocomplete="off" required>
+          <label for="email">Email</label>
+          <span class="border"></span>
+        </div>
+        <div class="group">
+          <input autocomplete="off" placeholder="&nbsp;" type="text" id="subject" name="subject" required><br><br>
+          <label for="subject">Subject</label>
+          <span class="border"></span>
+        </div>
+        <div class="group">
+          <textarea autocomplete="off" placeholder="&nbsp;" id="message" name="message" rows="4" cols="30" required></textarea><br><br>
+          <label for="message">Message</label><br>
+          <span class="border"></span>
+        </div>
+        <button onclick="sendEmail()" type="submit" class="button">Send</button>
+        <script>
+          function sendEmail(event) {
+              event.preventDefault(); 
+              let userEmail = document.getElementById("email").value;
+              let subject = document.getElementById("subject").value;
+              let message = document.getElementById("message").value;
+  
+              let mailtoLink = `mailto:recipient@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + userEmail + "\n\n" + message)}`;
+              window.location.href = mailtoLink;
+          }
+      </script>
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="content">
+    <a href="index.html" class="logo"><img src="images/logodo.png" alt="logo"/></a>
+    <div class="hero">
+      <h1 class="title">We explore and uncover</h1>
+      <h1 class="title shift clip">
+        <span class="word-shift">
+          <b class="is-visible">people who want more&nbsp;</b>
+          <b>mindful people</b>
+          <b>designers</b>
+          <b>side project junkies</b>
+          <b>indie hackers</b>
+        </span>
+      </h1>
+      <button class="button modal-toggle">Contact us !</button>
+    </div>
+    <section class="section cta">
+      <div class="cards">
+        <img src="images/overlay-left.svg" class="overlay-left hide-mobile" alt="overlay"/>
+        <img src="images/overlay-right.svg" class="overlay-right hide-mobile" alt="overlay"/>
+        <div class="slider">
+          <div class="slide"><img src="images/card-icloud.svg" alt="icloud"/></div>
+          <div class="slide"><img src="images/card-gmail.svg" alt="gmail"/></div>
+          <div class="slide"><img src="images/card-outlook.svg" alt="outlook"/></div>
+          <div class="slide"><img src="images/card-yahoo.svg" alt="yahooe"/></div>
+          <div class="slide"><img src="images/card-pop3.svg" alt="pop3"/></div>
+          <div class="slide"><img src="images/card-imap.svg" alt="imap"/></div>
+        </div>
+    </section>
+    <section class="section section-features">
+      <h2 class="title">Dead simple experience</h1>
+      <div class="features">
+        <img src="images/overlay-left.svg" class="overlay-left hide-mobile" alt="overlay"/>
+        <img src="images/overlay-right.svg" class="overlay-right hide-mobile" alt="overlay"/>
+        <img src="images/overlay-top.svg" class="overlay-top show-mobile" alt="overlay"/>
+        <img src="images/overlay-bottom.svg" class="overlay-bottom show-mobile" alt="overlay"/>
+        <div class="row dos">
+          <div class="feature"><i class="icon" data-feather="check"></i>Custom</div>
+          <div class="feature"><i class="icon" data-feather="check"></i>Shortcuts</div>
+          <div class="feature"><i class="icon" data-feather="check"></i>Modes</div>
+          <div class="feature"><i class="icon" data-feather="check"></i>Lightning fast</div>
+          <div class="feature"><i class="icon" data-feather="check"></i>Interactive</div>
+          <div class="feature"><i class="icon" data-feather="check"></i>Filters</div>
+          <div class="feature"><i class="icon" data-feather="check"></i>Themes</div>
+        </div>
+        <div class="row donts">
+          <div class="feature"><i class="icon" data-feather="x"></i>Templating</div>
+          <div class="feature"><i class="icon" data-feather="x"></i>Snoozing</div>
+          <div class="feature"><i class="icon" data-feather="x"></i>Waste</div>
+          <div class="feature"><i class="icon" data-feather="x"></i>Rush</div>
+        </div>
+      </div>
+      <!-- <p>If you’re looking for an email client with more features, try <a href="">these</a>.</p> -->
+    </section>
+    </section>
+    <section class="section imagery">
+      <h2 class="title">Just save time</h2>
+      <img src="images/overlay-bottom.svg" class="overlay-bottom hide-mobile" alt="overlay"/>
+      <div class="zero-slider">
+        <div class="slide"><img src="images/screen-illo-1.png" alt="inboxzero"/></div>
+        <div class="slide"><img src="images/screen-illo-2.png" alt="inboxzero"/></div>
+        <div class="slide"><img src="images/screen-illo-3.png" alt="inboxzero"/></div>
+        <div class="slide"><img src="images/screen-illo-4.png" alt="inboxzero"/></div>
+        <div class="slide"><img src="images/screen-illo-5.png" alt="inboxzero"/></div>
+        <div class="slide"><img src="images/screen-illo-6.png" alt="inboxzero"/></div>
+      </div>
+    </section>
+    <footer class="footer">
+      <p>&copy; Tadata</p>
+    </footer>
+    </div>
+  </div>
+  <script src="./js/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/scripts.min.js"></script>
+<script>
+
+  // Close modal on escape key
+  $(document).keyup(function(e) {
+    if (e.key === "Escape") {
+      $('.modal').removeClass('modal-show');
+      $('.content').removeClass('content-blurred');
+      $('body').removeClass('no-scroll');
+    }
+  });
+
+  $(function(){
+
+    // Provider card slider
+    $('.slider').flickity({
+      pauseAutoPlayOnHover: false,
+      prevNextButtons: false,
+      cellAlign: 'center',
+      draggable:  false,
+      freeScroll: false,
+      wrapAround: true,
+      pageDots: false,
+      autoPlay: 3000,
+    });
+
+    // Imbox zero slider
+    $('.zero-slider').flickity({
+      pauseAutoPlayOnHover: false,
+      prevNextButtons: false,
+      cellAlign: 'center',
+      freeScroll: false,
+      wrapAround: false,
+      draggable: false,
+      pageDots: false,
+      autoPlay: 3000,
+      fade: true,
+    });
+
+    // Open & close modal
+    $('.modal-toggle').click(function(){
+      $('.modal').toggleClass('modal-show');
+      $('.content').toggleClass('content-blurred');
+      $('body').toggleClass('no-scroll');
+    });
+
+    // Reserve username form
+    $(".form").submit(function(e) {
+      e.preventDefault();
+      var $form = $(this);
+      $.post($form.attr("action"), $form.serialize()).then(function() {
+        $('.form-content').addClass('form-content-hide');
+        $('.success').addClass('success-show');
+      });
+    });
+
+    // Save user's first name
+    $(".form").submit(function(e) {
+      e.preventDefault();
+      var value = $("#firstName").val();
+      $('.first-name').text("Thank you," + " " + value + "!");
+    });
+
+    // Feather icons
+    feather.replace()
+
+    // ScrollReveal
+    ScrollReveal().reveal('.hero, .title, .screen, .features, .cards, .zero-slider', {
+      distance: '40px',
+      duration: 2000,
+      mobile: false,
+      reset: false,
+      opacity: 0
+    });
+
+  });
+</script>
+
 </body>
+
 </html>
