@@ -20,7 +20,9 @@
 
 <body>
   <div class="modal">
-  <button type="button" class="modal-close modal-toggle"><i class="icon" data-feather="x"></i><span class="hide-mobile">ESC</span></button>
+  <button type="button" class="modal-close modal-toggle">
+    <i class="icon" data-feather="x"></i><span class="hide-mobile">ESC</span>
+  </button>
   <div class="modal-content">
     <div class="success">
       <a href="index.html" class="logo"><img src="images/logo.svg" alt="logo"/></a>
@@ -30,7 +32,7 @@
     </div>
     <div class="form-content">
       <a href="index.html" class="logo"><img src="images/logodo.svg" alt="logo"/></a>
-      <h2 class="modal-title">Contact us !</h2>
+      <h2 class="button modal-toggle">Contact us !</h2>
       <p class="modal-subtitle">Winners always try 😉</p>
       <form class='form' type='hidden' name='form-name' method='POST' value='TadataForm' onsubmit="sendEmail(event)">
         <div class="group">
@@ -53,7 +55,7 @@
           <label for="message">Message</label>
           <span class="border"></span>
       </div>
-        <button type="submit">Send</button>
+        <button id="submit-button" type="submit">Send</button>
     </form>
     
     <script>
@@ -89,7 +91,9 @@
           <b>indie hackers</b>
         </span>
       </h1>
-      <button class="button modal-toggle">Contact us !</button>
+      <div class="cta-content">
+        <button class="button modal-toggle">Contact us !</button>
+      </div>
     </div>
     <section class="section cta">
       <div class="cards">

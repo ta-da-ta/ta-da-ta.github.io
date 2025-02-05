@@ -273,17 +273,17 @@ a,
 
 *::-webkit-selection {
     background-color: #000000;;
-    color: #fff
+    color: #fff 
 }
 
 *::-moz-selection {
     background-color: #000000;;
-    color: #fff
+    color: #fff 
 }
 
 *::selection {
     background-color: #000000;;
-    color: #fff
+    color: #fff 
 }
 
 ::-webkit-scrollbar {
@@ -463,17 +463,17 @@ a,
 
 *::-webkit-selection {
     background-color: #000000;;
-    color: #fff
+    color: #fff 
 }
 
 *::-moz-selection {
     background-color: #000000;;
-    color: #fff
+    color: #fff 
 }
 
 *::selection {
     background-color: #000000;;
-    color: #fff
+    color: #fff 
 }
 
 ::-webkit-scrollbar {
@@ -643,7 +643,7 @@ body {
     background: #f2f3f5;
     font-family: "colfax-medium", sans-serif;
     text-align: center;
-    color: #222
+    /* color: #222 */
 }
 
 body.no-scroll {
@@ -941,7 +941,7 @@ button {
 }
 
 .section.cta .cta-content .title {
-    color: #fff
+    /* color: #fff */
 }
 
 .section.cta .cta-content .subtitle {
@@ -949,7 +949,7 @@ button {
 }
 
 .section.cta .cta-content .subtitle {
-    color: #fff
+    /* color: #fff */
 }
 
 .section.cta .cta-content .subtitle img {
@@ -1588,14 +1588,6 @@ form .button {
     font-style: normal
 }
 
-* {
-    text-decoration: none;
-    list-style: none;
-    outline: none;
-    border: none;
-    padding: 0;
-    margin: 0
-}
 
 *,
 *:before,
@@ -1642,17 +1634,17 @@ a,
 
 *::-webkit-selection {
     background-color: #000000;;
-    color: #fff
+    color: #fff 
 }
 
 *::-moz-selection {
     background-color: #000000;;
-    color: #fff
+    color: #fff 
 }
 
 *::selection {
     background-color: #000000;;
-    color: #fff
+    color: #fff  
 }
 
 ::-webkit-scrollbar {
@@ -1977,7 +1969,6 @@ input:focus ~ .border, textarea:focus ~ .border {
 
 button {
     background: #3a424b;
-    color: white;
     border: none;
     padding: 12px;
     border-radius: 5px;
@@ -1987,4 +1978,8 @@ button {
 
 button:hover {
     background: #3a424b;
+}
+
+#submit-button {
+    color: white;
 }
